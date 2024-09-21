@@ -43,7 +43,7 @@ export const calculateOverallAttendancePercentage = (subjectAttendance) => {
     const uniqueSubIds = [];
 
     subjectAttendance.forEach((attendance) => {
-        const subId = attendance.subName._id;
+        const subId = attendance.subName?._id;
         if (!uniqueSubIds.includes(subId)) {
             const sessions = parseInt(attendance.subName.sessions);
             totalSessionsSum += sessions;
