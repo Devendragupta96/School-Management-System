@@ -255,14 +255,14 @@ const ClassDetails = () => {
         { id: 'subject', label: 'Subject', minWidth: 100 },
     ]
 
-    const teacherRows =teacherListClass && teacherListClass?.map((teacher) => {
+    const teacherRows =teacherListClass ? teacherListClass?.map((teacher) => {
         return {
             name: teacher?.name,
             class: teacher.teachSclass?.sclassName,
             subject: teacher.teachSubject?.subName,
             id: teacher?._id,
         };
-    })
+    }):[]
 
     const TeachersButtonHaver = ({ row }) => {
         return (

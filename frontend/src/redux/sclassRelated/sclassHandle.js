@@ -106,7 +106,7 @@ export const getTeachersByClass = (id) => async (dispatch) => {
 
     try {
         const result = await axios.get(`${process.env.REACT_APP_BASE_URL}/TeachersByClass/${id}`);
-        if (result.data) {
+        if (!result.data.message) {
             dispatch(getTeacherSuccess(result.data));
         }
     } catch (error) {
