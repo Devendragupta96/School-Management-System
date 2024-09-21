@@ -43,11 +43,14 @@ export const calculateOverallAttendancePercentage = (subjectAttendance) => {
     const uniqueSubIds = [];
 
     subjectAttendance.forEach((attendance) => {
-        const subId = attendance.subName?._id;
-        if (!uniqueSubIds.includes(subId)) {
-            const sessions = parseInt(attendance.subName.sessions);
-            totalSessionsSum += sessions;
-            uniqueSubIds.push(subId);
+        const subName = attendance.subName;
+        if (subName && subName._id) {  // Null check for subName and subName._id
+            const subId = subName._id;
+            if (!uniqueSubIds.includes(subId)) {
+                const sessions = parseInt(subName.sessions, 10);
+                totalSessionsSum += sessions;
+                uniqueSubIds.push(subId);
+            }
         }
         presentCountSum += attendance.status === "Present" ? 1 : 0;
     });
