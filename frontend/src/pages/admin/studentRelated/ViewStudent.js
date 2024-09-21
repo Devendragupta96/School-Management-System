@@ -135,12 +135,6 @@ const ViewStudent = () => {
 
     const subjectData = Object.entries(groupAttendanceBySubject(subjectAttendance)).map(([subName, { subCode, present, sessions }]) => {
         const subjectAttendancePercentage = calculateSubjectAttendancePercentage(present, sessions);
-        console.log(subjectAttendance,{
-            subject: subName,
-            attendancePercentage: subjectAttendancePercentage,
-            totalClasses: sessions,
-            attendedClasses: present
-        })
         return {
             subject: subName,
             attendancePercentage: subjectAttendancePercentage,
