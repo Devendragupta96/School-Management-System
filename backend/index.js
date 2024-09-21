@@ -15,7 +15,7 @@ dotenv.config();
 
 app.use(express.json({ limit: "10mb" }));
 app.use(cors({
-  origin:['https://school-management-system-frontend-lxuvh3pmb.vercel.app'],
+  origin:['https://school-management-system-frontend-khaki.vercel.app/'],
   // methods:['POST', 'GET', 'PUT', 'DELETE'],
   credentials:true
 }));
